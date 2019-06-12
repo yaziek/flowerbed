@@ -48,14 +48,17 @@ public class Flower {
         this.oneAnnual = oneAnnual;
     }
 
+    private String annual(){
+        if (isOneAnnual()){
+            return "tak";
+        }else {
+            return "nie";
+        }
+    }
+
     @Override
     public String toString() {
-        return "Flower{" +
-                "name='" + name + '\'' +
-                ", systematicName='" + systematicName + '\'' +
-                ", family='" + family + '\'' +
-                ", oneAnnual=" + oneAnnual +
-                '}';
+        return "Nazwa: " + getName() + " (łac. " + getSystematicName() + "), rodzina: " + getFamily() + ", jednoroczna: " + annual();
     }
 
     @Override
