@@ -1,4 +1,4 @@
-package pl.brzezinskip.flowerbed.flower;
+package pl.brzezinskip.flowerbed.flowers;
 
 import java.util.Objects;
 
