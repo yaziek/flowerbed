@@ -22,7 +22,7 @@ public class FlowerWriter {
 //        System.out.println(flowerReaded.toString());
 //    }
 
-    public static void saveFlower(Flower flower) { //TODO divide this class for smaller classes
+    public void saveFlower(Flower flower) { //TODO divide this class for smaller classes
         String flowerName = flower.getName().toString();
         String fileName = flowerName + ".obj";
         File file = new File(fileName);

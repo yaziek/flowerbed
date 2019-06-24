@@ -14,11 +14,12 @@ public class UserMenu {
 
     public static final int EXIT = 0;
     public static final int CREATE_FLOWER = 1;
-    public static final int SHOW_FLOWERS= 2;
+    public static final int SHOW_FLOWERS = 2;
+    public static final int FIND_FLOWER = 3;
 
     int choice = -1;
 
-    public void menu(){
+    public void menu() {
         while (choice != EXIT) {
             showChoices();
             choice = scanner.nextInt();
@@ -30,17 +31,24 @@ public class UserMenu {
                 case SHOW_FLOWERS:
                     flowerbed.showAllFlowers();
                     break;
+                case FIND_FLOWER:
+                    flowerbed.findFlower();
+                    break;
                 case EXIT:
                     System.out.println("Pa, pa!");
                     break;
+
             }
         }
+
+        scanner.close();
     }
 
-    private void showChoices(){
+    private void showChoices() {
         System.out.println("Co chcesz zrobić?");
         System.out.println(CREATE_FLOWER + " - dodaj kwiatek");
         System.out.println(SHOW_FLOWERS + " - pokaż kwiaty");
+        System.out.println(FIND_FLOWER + " - znajdź kwiatek");
         System.out.println(EXIT + " - wyjście z programu");
     }
 

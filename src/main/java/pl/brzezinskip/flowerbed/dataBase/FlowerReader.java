@@ -7,7 +7,7 @@ import java.io.*;
 public class FlowerReader {
 
     //TODO divide for smaller classes
-    public static Flower readFlower(Flower flower) {
+    public Flower readFlower(Flower flower) {
         String fileName = flower.getName() + ".obj";
         Flower flowerToRead = null;
         File file = new File(fileName);
@@ -29,6 +29,9 @@ public class FlowerReader {
             System.err.println("Roślinka o takiej nazwie nie istnieje w bazie danych :(");
         }
 
+        if (flowerToRead != null) {
+            System.out.println("Wczytano dane o: " + flowerToRead.toString());
+        }
         return flowerToRead;
     }
 }
