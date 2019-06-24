@@ -1,8 +1,9 @@
 package pl.brzezinskip.flowerbed.flowers;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Flower {
+public class Flower implements Serializable {
 
     private String name;
     private String systematicName;

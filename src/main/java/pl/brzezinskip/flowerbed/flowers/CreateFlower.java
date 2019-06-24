@@ -9,7 +9,7 @@ public class CreateFlower {
     public Flower newFlower() {
         System.out.println("Podaj nazwę:");
         String name = scanner.nextLine();
-        System.out.println("Podaj łacińską nazwę:");
+        System.out.println("Podaj Łacińską nazwę:");
         String systematicName = scanner.nextLine();
         System.out.println("Podaj rodzinę:");
         String family = scanner.nextLine();
@@ -32,7 +32,7 @@ public class CreateFlower {
                 checkIfTrue = false;
                 correctAnswer = true;
             } else {
-                System.out.println("Możesz odpowiedzieć tylko tak lub nie, spróbuj jeszcze raz:");
+                System.out.println("MoĹĽesz odpowiedzieć tylko tak lub nie, spróbuj jeszcze raz:");
                 correctAnswer = false;
             }
         }
