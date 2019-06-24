@@ -9,14 +9,18 @@ import java.io.ObjectOutputStream;
 
 public class FlowerWriter {
 
-    public static void main(String[] args) {  // for testing purpose only
-
-        Flower flower1 = new Flower("Chaber bławatek", "Centaurea cyanus", "astrowate", true );
-
-        System.out.println(flower1.toString());
-
-        saveFlower(flower1);
-    }
+    // for testing purpose only
+//    public static void main(String[] args) {
+//
+//        FlowerReader flowerReader = new FlowerReader();
+//
+//        Flower flower1 = new Flower("Chaber bławatek", "Centaurea cyanus", "astrowate", true );
+//
+//        saveFlower(flower1);
+//        Flower flowerReaded = flowerReader.readFlower(flower1);
+//
+//        System.out.println(flowerReaded.toString());
+//    }
 
     public static void saveFlower(Flower flower) { //TODO divide this class for smaller classes
         String flowerName = flower.getName().toString();

@@ -8,7 +8,7 @@ public class Flower implements Serializable {
     private String name;
     private String systematicName;
     private String family;
-    private boolean oneAnnual;  //jednoroczny?
+    private boolean oneAnnual;  //one year plant only?
 
     public Flower(String name, String systematicName, String family, boolean oneAnnual) {
         this.name = name;
