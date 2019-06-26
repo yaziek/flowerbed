@@ -12,18 +12,14 @@ public class UserMenu {
     CreateFlower createFlower = new CreateFlower();
     Flowerbed flowerbed = new Flowerbed();
 
-    public static final int EXIT = 0;
-    public static final int CREATE_FLOWER = 1;
-    public static final int SHOW_FLOWERS = 2;
-    public static final int FIND_FLOWER = 3;
-
     int choice = -1;
 
     public void menu() {
-        while (choice != EXIT) {
-            showChoices();
-            choice = scanner.nextInt();
-            switch (choice) {
+        Option option = null;
+        while (option != Option.EXIT) {
+            showOptions();
+            option = Option.createFromInt(scanner.nextInt());
+            switch (option) {
                 case CREATE_FLOWER:
                     Flower newFlower = createFlower.newFlower();
                     flowerbed.addFlower(newFlower);
@@ -44,12 +40,35 @@ public class UserMenu {
         scanner.close();
     }
 
-    private void showChoices() {
-        System.out.println("Co chcesz zrobić?");
-        System.out.println(CREATE_FLOWER + " - dodaj kwiatek");
-        System.out.println(SHOW_FLOWERS + " - pokaż kwiaty");
-        System.out.println(FIND_FLOWER + " - znajdź kwiatek");
-        System.out.println(EXIT + " - wyjście z programu");
+    private enum Option{
+        EXIT(0, "wyjście z programu"),
+        CREATE_FLOWER(1, "dodaj kwiatek"),
+        SHOW_FLOWERS(2, "pokaż kwiatki"),
+        FIND_FLOWER(3, "znajdź kwiatek");
+
+
+        int option;
+        String description;
+
+        Option(int option, String description) {
+            this.option = option;
+            this.description = description;
+        }
+
+        @Override
+        public String toString() {
+            return option + " - " + description;
+        }
+
+        static Option createFromInt(int option){ //method must be visible outside enum class
+            return Option.values()[option];
+        }
+    }
+
+    private void showOptions() {
+        for(Option o: Option.values()){
+            System.out.println(o);
+        }
     }
 
 }
